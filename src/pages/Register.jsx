@@ -1,8 +1,10 @@
-import "./auth.css";
+import { useNavigate } from "react-router-dom";
 import bgRegister from "../assets/bg-register.jpg";
-import { Link } from "react-router-dom";
+import "./auth.css";
 
 export default function Register() {
+  const navigate = useNavigate();
+
   return (
     <div
       className="auth-page"
@@ -15,11 +17,9 @@ export default function Register() {
         <input type="email" placeholder="Email" />
         <input type="password" placeholder="Password" />
 
-        <button>Register</button>
-
-        <p>
-          Already have an account? <Link to="/login">Login</Link>
-        </p>
+        <button onClick={() => navigate("/feed")}>
+          Register
+        </button>
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+/* Page background */
 .auth-page {
   min-height: 100vh;
   background-size: cover;
@@ -5,37 +6,82 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 1s ease-in;
 }
 
+/* Card style */
 .auth-card {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 30px;
-  width: 320px;
+  width: 340px;
+  padding: 35px 30px;
   border-radius: 16px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   text-align: center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.8s ease;
 }
 
+/* Title */
+.auth-card h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Inputs */
 .auth-card input {
   width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
 }
 
+/* Buttons */
 .auth-card button {
   width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 8px;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 10px;
   border: none;
-  background: #2563eb;
-  color: white;
+  font-size: 15px;
   font-weight: bold;
   cursor: pointer;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.auth-card button.secondary {
-  background: #6b7280;
+.auth-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Secondary button */
+.secondary {
+  background: linear-gradient(135deg, #232526, #414345);
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

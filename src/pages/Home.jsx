@@ -1,5 +1,5 @@
-import bgHome from "../assets/bg.home.jpg";
 import { Link } from "react-router-dom";
+import bgHome from "../assets/bg.home.jpg";
 import "./auth.css";
 
 export default function Home() {
