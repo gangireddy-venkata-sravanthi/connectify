@@ -1,134 +1,86 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
 }
 
 body {
-  background: #0f172a;
-  padding: 30px;
+  margin: 0;
 }
 
-.app-container {
+.page {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 30px;
+  padding: 40px;
+  background: linear-gradient(270deg, #0f172a, #1e3a8a, #0f172a);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
 }
 
-/* ===== GLASS CARD ===== */
-.bg {
-  width: 330px;
-  min-height: 540px;
+.single {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(270deg, #0f172a, #1e3a8a);
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.card {
+  width: 300px;
+  background: #e5e7eb;
   padding: 25px;
-  border-radius: 20px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-/* Glass blur layer */
-.bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  z-index: 0;
-}
-
-.bg > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* Backgrounds */
-.register-bg {
-  background: url("./assets/bg-register.jpg") center/cover no-repeat;
-}
-.login-bg {
-  background: url("./assets/bg-login.jpg") center/cover no-repeat;
-}
-.home-bg {
-  background: url("./assets/bg-home.jpg") center/cover no-repeat;
-}
-
-/* ===== TEXT ===== */
-h2 {
+.card h2 {
   text-align: center;
   color: #2563eb;
-  margin-bottom: 20px;
 }
 
-p {
-  font-size: 14px;
-}
-
-/* ===== INPUTS ===== */
-input {
+input, textarea {
   width: 100%;
   padding: 12px;
-  margin-bottom: 15px;
+  margin: 10px 0;
   border-radius: 10px;
-  border: 1px solid #d1d5db;
+  border: none;
 }
 
-/* Focus animation */
-input:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
-}
-
-/* ===== BUTTON ===== */
 button {
   width: 100%;
   padding: 12px;
-  background: linear-gradient(135deg, #2563eb, #3b82f6);
-  border: none;
+  background: #2563eb;
   color: white;
+  border: none;
+  border-radius: 12px;
   font-size: 16px;
-  border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.4);
+  background: #1d4ed8;
 }
 
-/* ===== LINKS ===== */
-.link {
+p {
   text-align: center;
-  margin-top: 12px;
-  color: #2563eb;
-  cursor: pointer;
 }
 
-/* ===== HOME FEED ===== */
-.profile {
-  display: flex;
-  gap: 12px;
-  align-items: center;
+.feed-preview .post,
+.feed .post {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 15px;
 }
 
-.profile img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.post-img {
-  width: 100%;
-  border-radius: 12px;
-  margin: 12px 0;
-}
-
-.actions {
-  display: flex;
-  gap: 20px;
+.icons {
+  margin-top: 5px;
   font-size: 14px;
-  color: #475569;
 }

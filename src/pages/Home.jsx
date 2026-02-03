@@ -1,35 +1,23 @@
-import user1 from "../assets/user1.jpg";
-import user2 from "../assets/user2.jpg";
-import post from "../assets/post.jpg";
+import bgHome from "../assets/bg.home.jpg";
+import { Link } from "react-router-dom";
+import "./auth.css";
 
 export default function Home() {
   return (
-    <div className="bg home-bg">
-      <h2>Connectify</h2>
+    <div
+      className="auth-page"
+      style={{ backgroundImage: `url(${bgHome})` }}
+    >
+      <div className="auth-card">
+        <h2>Connectify</h2>
 
-      <div className="profile">
-        <img src={user1} />
-        <div>
-          <b>James Smith</b>
-          <p>gangireddy@email.com</p>
-        </div>
-      </div>
+        <Link to="/login">
+          <button>Login</button>
+        </Link>
 
-      <p>This is my first post on Connectify!</p>
-      <img src={post} className="post-img" />
-
-      <div className="actions">
-        ❤️ 150 &nbsp; 💬 30 &nbsp; 🔗 Share
-      </div>
-
-      <hr style={{ margin: "15px 0" }} />
-
-      <div className="profile">
-        <img src={user2} />
-        <div>
-          <b>Sarah Johnson</b>
-          <p>Loving this platform 😍</p>
-        </div>
+        <Link to="/register">
+          <button className="secondary">Register</button>
+        </Link>
       </div>
     </div>
   );
